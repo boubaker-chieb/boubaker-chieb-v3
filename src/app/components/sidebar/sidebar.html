@@ -1,0 +1,61 @@
+<aside class="sidebar" [class.mobile-open]="isMobileMenuOpen()">
+  <!-- Profile Image -->
+  <div class="sidebar-profile">
+    <div class="profile-img-wrapper">
+      <span class="profile-initial">B</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sidebar-nav">
+    @for (item of navItems; track item.id) {
+      <a
+        class="nav-item"
+        [class.active]="activeSection() === item.id"
+        (click)="scrollTo(item.id)"
+        [title]="item.label"
+      >
+        <i [class]="item.icon"></i>
+        <span class="nav-label">{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" (click)="themeService.toggle()" title="Toggle theme">
+    @if (themeService.theme() === 'dark') {
+      <i class="fas fa-sun"></i>
+    } @else {
+      <i class="fas fa-moon"></i>
+    }
+  </button>
+
+  <!-- Social Links -->
+  <div class="sidebar-social">
+    @for (social of socialLinks; track social.url) {
+      <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="social-link">
+        <i [class]="social.icon"></i>
+      </a>
+    }
+  </div>
+</aside>
+
+<!-- Mobile Bottom Nav -->
+<nav class="mobile-nav">
+  @for (item of navItems; track item.id) {
+    <a
+      class="mobile-nav-item"
+      [class.active]="activeSection() === item.id"
+      (click)="scrollTo(item.id)"
+    >
+      <i [class]="item.icon"></i>
+    </a>
+  }
+  <button class="mobile-theme-toggle" (click)="themeService.toggle()">
+    @if (themeService.theme() === 'dark') {
+      <i class="fas fa-sun"></i>
+    } @else {
+      <i class="fas fa-moon"></i>
+    }
+  </button>
+</nav>

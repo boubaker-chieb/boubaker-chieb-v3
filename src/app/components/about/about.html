@@ -1,0 +1,52 @@
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle">Get to Know Me</span>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <div class="about-image">
+          <div class="image-wrapper">
+            <div class="about-avatar">
+              <i class="fas fa-code"></i>
+            </div>
+          </div>
+          <div class="about-badge">
+            <span class="badge-number">8+</span>
+            <span class="badge-text">Years of<br />Experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="about-content">
+          <h3 class="about-name">{{ name() }}</h3>
+          <span class="about-role">{{ role() }}</span>
+          <p class="about-bio">{{ bio() }}</p>
+
+          <div class="about-details">
+            @for (detail of details; track detail.label) {
+              <div class="detail-item">
+                <div class="detail-icon">
+                  <i [class]="detail.icon"></i>
+                </div>
+                <div class="detail-info">
+                  <span class="detail-label">{{ detail.label }}</span>
+                  <span class="detail-value">{{ detail.value }}</span>
+                </div>
+              </div>
+            }
+          </div>
+
+          <div class="about-actions">
+            <a href="mailto:boubaker.ch&#64;outlook.fr" class="btn-primary-custom">
+              <i class="fas fa-paper-plane"></i> Hire Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

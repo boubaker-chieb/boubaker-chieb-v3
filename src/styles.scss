@@ -1,1 +1,287 @@
-/* You can add global styles to this file, and also import other style files */
+// ============================
+// Portfolio V3 - Global Styles
+// ============================
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+// Static accent colors
+$primary-color: #ff6600;
+$gradient-end: #ff3366;
+
+// ============================
+// Theme CSS Custom Properties
+// ============================
+:root,
+[data-theme='dark'] {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #0a0a14;
+  --bg-card: rgba(22, 22, 42, 0.8);
+  --bg-card-solid: #16162a;
+  --bg-input: rgba(255, 255, 255, 0.03);
+  --text-primary: #ffffff;
+  --text-secondary: #c4c4c4;
+  --text-muted: #8a8a8a;
+  --text-faint: rgba(255, 255, 255, 0.4);
+  --border-color: #2a2a3e;
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-faint: rgba(255, 255, 255, 0.05);
+  --shadow-card: rgba(0, 0, 0, 0.3);
+  --shadow-heavy: rgba(0, 0, 0, 0.4);
+  --code-bg: #1a1a2e;
+  --code-header: #12121f;
+  --tag-bg: rgba(255, 255, 255, 0.05);
+  --tag-text: rgba(255, 255, 255, 0.5);
+  --tag-border: rgba(255, 255, 255, 0.08);
+  --placeholder: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme='light'] {
+  --bg-primary: #f5f5fa;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-solid: #ffffff;
+  --bg-input: rgba(0, 0, 0, 0.03);
+  --text-primary: #1a1a2e;
+  --text-secondary: #444466;
+  --text-muted: #6b6b8a;
+  --text-faint: rgba(0, 0, 0, 0.45);
+  --border-color: #dddde8;
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-faint: rgba(0, 0, 0, 0.05);
+  --shadow-card: rgba(0, 0, 0, 0.06);
+  --shadow-heavy: rgba(0, 0, 0, 0.1);
+  --code-bg: #f0f0f8;
+  --code-header: #e4e4ee;
+  --tag-bg: rgba(0, 0, 0, 0.04);
+  --tag-text: rgba(0, 0, 0, 0.55);
+  --tag-border: rgba(0, 0, 0, 0.1);
+  --placeholder: rgba(0, 0, 0, 0.3);
+}
+
+$font-family: 'Poppins', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  overflow-x: hidden;
+  line-height: 1.7;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #ff8533; // lighter primary
+  }
+}
+
+.section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .section-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $primary-color;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+  }
+
+  .section-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, $primary-color, $gradient-end);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, $primary-color, $gradient-end);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba($primary-color, 0.4);
+    color: white;
+  }
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid $primary-color;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(135deg, $primary-color, $gradient-end);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba($primary-color, 0.4);
+  }
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($primary-color, 0.3);
+    box-shadow: 0 15px 40px var(--shadow-card);
+  }
+}
+
+.main-content {
+  margin-left: 80px;
+  min-height: 100vh;
+}
+
+@media (max-width: 991px) {
+  .main-content {
+    margin-left: 0;
+    padding-bottom: 70px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+
+    .section-title {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+
+    .section-subtitle {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+  }
+
+  .glass-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .btn-primary-custom {
+    padding: 10px 22px;
+    font-size: 13px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-outline-custom {
+    padding: 8px 20px;
+    font-size: 13px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+

@@ -1,0 +1,207 @@
+$primary: #ff6600;
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: background 0.4s ease, border-color 0.4s ease;
+
+  .sidebar-profile {
+    margin-bottom: 30px;
+
+    .profile-img-wrapper {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $primary, #ff3366);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      .profile-initial {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    .nav-item {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      text-decoration: none;
+
+      .nav-label {
+        display: none;
+        position: absolute;
+        left: 60px;
+        background: $primary;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+
+      &:hover {
+        background: rgba($primary, 0.1);
+        color: $primary;
+
+        .nav-label {
+          display: block;
+        }
+      }
+
+      &.active {
+        background: linear-gradient(135deg, $primary, #ff3366);
+        color: white;
+        box-shadow: 0 4px 15px rgba($primary, 0.4);
+      }
+    }
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+      background: rgba($primary, 0.1);
+    }
+  }
+
+  .sidebar-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+
+    .social-link {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Mobile Bottom Navigation
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 8px;
+
+  .mobile-nav-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &.active {
+      background: linear-gradient(135deg, $primary, #ff3366);
+      color: white;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .mobile-theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+}

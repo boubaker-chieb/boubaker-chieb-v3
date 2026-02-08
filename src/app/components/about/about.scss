@@ -1,0 +1,233 @@
+$primary: #ff6600;
+$gradient-end: #ff3366;
+
+.about-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  .image-wrapper {
+    width: 280px;
+    height: 280px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba($primary, 0.1), rgba($gradient-end, 0.1));
+    border: 2px solid rgba($primary, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    .about-avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $primary, $gradient-end);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 60px;
+        color: white;
+      }
+    }
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    background: linear-gradient(135deg, $primary, $gradient-end);
+    padding: 15px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba($primary, 0.3);
+
+    .badge-number {
+      display: block;
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+    }
+
+    .badge-text {
+      font-size: 11px;
+      color: rgba(white, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.about-content {
+  .about-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+  }
+
+  .about-role {
+    display: inline-block;
+    font-size: 14px;
+    color: $primary;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .about-bio {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .about-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .detail-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba($primary, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        i {
+          color: $primary;
+          font-size: 14px;
+        }
+      }
+
+      .detail-info {
+        .detail-label {
+          display: block;
+          font-size: 11px;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .detail-value {
+          font-size: 13px;
+          color: var(--text-primary);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .about-image {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .about-content {
+    text-align: center;
+
+    .about-details {
+      grid-template-columns: 1fr;
+    }
+
+    .about-actions {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about-image {
+    .image-wrapper {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+
+      .about-avatar {
+        width: 130px;
+        height: 130px;
+
+        i {
+          font-size: 42px;
+        }
+      }
+    }
+
+    .about-badge {
+      padding: 10px 14px;
+      border-radius: 12px;
+      right: 10px;
+      bottom: -8px;
+
+      .badge-number {
+        font-size: 20px;
+      }
+
+      .badge-text {
+        font-size: 9px;
+      }
+    }
+  }
+
+  .about-content {
+    .about-name {
+      font-size: 22px;
+    }
+
+    .about-role {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    .about-bio {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .about-details {
+      gap: 10px;
+
+      .detail-item {
+        gap: 10px;
+        text-align: left;
+
+        .detail-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 8px;
+
+          i {
+            font-size: 12px;
+          }
+        }
+
+        .detail-info {
+          .detail-label {
+            font-size: 10px;
+          }
+
+          .detail-value {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

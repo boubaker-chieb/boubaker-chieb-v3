@@ -1,0 +1,77 @@
+$primary: #ff6600;
+
+.skill-card {
+  text-align: center;
+  height: 100%;
+
+  .skill-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+
+    i {
+      font-size: 28px;
+    }
+  }
+
+  .skill-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+
+    .skill-tag {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid;
+      font-size: 12px;
+      font-weight: 500;
+      background: transparent;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .skill-card {
+    .skill-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+
+      i {
+        font-size: 22px;
+      }
+    }
+
+    .skill-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      gap: 6px;
+
+      .skill-tag {
+        padding: 4px 10px;
+        font-size: 11px;
+      }
+    }
+  }
+}

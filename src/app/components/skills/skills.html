@@ -1,0 +1,29 @@
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle">What I Know</span>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="row g-4">
+      @for (category of categories; track category.title) {
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card glass-card">
+            <div class="skill-icon" [style.background]="'rgba(' + category.color + ', 0.1)'">
+              <i [class]="category.icon" [style.color]="category.color"></i>
+            </div>
+            <h3 class="skill-title">{{ category.title }}</h3>
+            <div class="skill-tags">
+              @for (skill of category.skills; track skill) {
+                <span class="skill-tag" [style.border-color]="category.color" [style.color]="category.color">
+                  {{ skill }}
+                </span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

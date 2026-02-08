@@ -1,0 +1,150 @@
+@use 'sass:color';
+$primary: #ff6600;
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+
+  .filter-btn {
+    padding: 8px 22px;
+    border-radius: 25px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-faint);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+    }
+
+    &.active {
+      background: linear-gradient(135deg, $primary, color.adjust($primary, $lightness: -10%));
+      border-color: $primary;
+      color: white;
+      box-shadow: 0 4px 15px rgba($primary, 0.3);
+    }
+  }
+}
+
+.project-card {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, $primary, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  .project-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: rgba($primary, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+
+    i {
+      font-size: 22px;
+      color: $primary;
+    }
+  }
+
+  .project-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: $primary;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .project-description {
+    font-size: 13px;
+    color: var(--tag-text);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    .project-tag {
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--tag-border);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-buttons {
+    gap: 6px;
+    margin-bottom: 25px;
+
+    .filter-btn {
+      padding: 6px 14px;
+      font-size: 12px;
+    }
+  }
+
+  .project-card {
+    .project-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+
+      i {
+        font-size: 18px;
+      }
+    }
+
+    .project-title {
+      font-size: 16px;
+    }
+
+    .project-description {
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .project-tags .project-tag {
+      font-size: 10px;
+      padding: 2px 8px;
+    }
+  }
+}

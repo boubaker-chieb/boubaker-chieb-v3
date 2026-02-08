@@ -1,0 +1,41 @@
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle">My Work</span>
+      <h2 class="section-title">Recent Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="filter-buttons">
+      @for (filter of filters; track filter) {
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === filter"
+          (click)="setFilter(filter)"
+        >
+          {{ filter }}
+        </button>
+      }
+    </div>
+
+    <div class="row g-4">
+      @for (project of filteredProjects; track project.title) {
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card glass-card">
+            <div class="project-icon">
+              <i [class]="project.icon"></i>
+            </div>
+            <span class="project-category">{{ project.category }}</span>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tags">
+              @for (tech of project.technologies; track tech) {
+                <span class="project-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

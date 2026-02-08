@@ -1,0 +1,183 @@
+$primary: #ff6600;
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, $primary, transparent);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 40px 40px 0;
+  margin-left: 0;
+
+  &.timeline-right {
+    margin-left: 50%;
+    padding: 0 0 40px 40px;
+
+    .timeline-dot {
+      left: -8px;
+    }
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  right: -8px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $primary;
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 10px rgba($primary, 0.5);
+  z-index: 2;
+}
+
+.timeline-content {
+  .timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .timeline-period,
+  .timeline-location {
+    font-size: 12px;
+    color: var(--text-faint);
+
+    i {
+      margin-right: 5px;
+      color: $primary;
+    }
+  }
+
+  .timeline-role {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    font-size: 14px;
+    color: $primary;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .timeline-description {
+    font-size: 14px;
+    color: var(--text-faint);
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+
+  .timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    .tech-tag {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      background: rgba($primary, 0.1);
+      color: $primary;
+      border: 1px solid rgba($primary, 0.2);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    &::before {
+      left: 20px;
+    }
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding: 0 0 30px 50px;
+    margin-left: 0;
+
+    &.timeline-right {
+      margin-left: 0;
+      padding: 0 0 30px 50px;
+
+      .timeline-dot {
+        left: 12px;
+      }
+    }
+  }
+
+  .timeline-dot {
+    left: 12px;
+    right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline {
+    &::before {
+      left: 14px;
+    }
+  }
+
+  .timeline-item {
+    padding: 0 0 20px 40px;
+
+    &.timeline-right {
+      padding: 0 0 20px 40px;
+
+      .timeline-dot {
+        left: 6px;
+      }
+    }
+  }
+
+  .timeline-dot {
+    left: 6px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-content {
+    .timeline-role {
+      font-size: 15px;
+    }
+
+    .timeline-company {
+      font-size: 13px;
+    }
+
+    .timeline-description {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-period,
+    .timeline-location {
+      font-size: 11px;
+    }
+
+    .timeline-tags .tech-tag {
+      padding: 3px 8px;
+      font-size: 10px;
+    }
+  }
+}
