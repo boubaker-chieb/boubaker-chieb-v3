@@ -1,4 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, inject, afterNextRender, DestroyRef } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
@@ -11,6 +11,9 @@ export class Sidebar {
   protected readonly themeService = inject(ThemeService);
   protected readonly activeSection = signal('hero');
   protected readonly isMobileMenuOpen = signal(false);
+
+  private readonly destroyRef = inject(DestroyRef);
+  private observer: IntersectionObserver | null = null;
 
   readonly navItems = [
     { id: 'hero', icon: 'fas fa-home', label: 'Home' },
@@ -27,6 +30,13 @@ export class Sidebar {
     { url: 'mailto:boubaker.ch@outlook.fr', icon: 'fas fa-envelope' },
   ];
 
+  constructor() {
+    afterNextRender(() => {
+      this.setupScrollSpy();
+      this.destroyRef.onDestroy(() => this.observer?.disconnect());
+    });
+  }
+
   scrollTo(sectionId: string): void {
     this.activeSection.set(sectionId);
     this.isMobileMenuOpen.set(false);
@@ -38,5 +48,38 @@ export class Sidebar {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen.update((v) => !v);
+  }
+
+  private setupScrollSpy(): void {
+    const sectionIds = this.navItems.map((item) => item.id);
+    const visibleSections = new Map<string, number>();
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            visibleSections.set(entry.target.id, entry.intersectionRatio);
+          } else {
+            visibleSections.delete(entry.target.id);
+          }
+        }
+
+        // Pick the section that appears first in the nav order among visible ones
+        for (const id of sectionIds) {
+          if (visibleSections.has(id)) {
+            this.activeSection.set(id);
+            break;
+          }
+        }
+      },
+      { threshold: [0, 0.1, 0.25, 0.5], rootMargin: '-10% 0px -60% 0px' }
+    );
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el) {
+        this.observer.observe(el);
+      }
+    }
   }
 }
