@@ -30,6 +30,11 @@
     }
   </button>
 
+  <!-- Language Switch -->
+  <button class="lang-toggle" (click)="cycleLang()" title="Switch language">
+    <span class="lang-code">{{ i18n.language().toUpperCase() }}</span>
+  </button>
+
   <!-- Social Links -->
   <div class="sidebar-social">
     @for (social of socialLinks; track social.url) {
@@ -57,5 +62,8 @@
     } @else {
       <i class="fas fa-moon"></i>
     }
+  </button>
+  <button class="mobile-lang-toggle" (click)="cycleLang()">
+    <span class="lang-code">{{ i18n.language().toUpperCase() }}</span>
   </button>
 </nav>

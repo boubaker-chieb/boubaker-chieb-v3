@@ -34,7 +34,6 @@ export class Sidebar {
   readonly languages: { code: Language; label: string }[] = [
     { code: 'en', label: 'EN' },
     { code: 'fr', label: 'FR' },
-    { code: 'ar', label: 'AR' },
   ];
 
   readonly socialLinks = [
@@ -64,7 +63,7 @@ export class Sidebar {
   }
 
   cycleLang(): void {
-    const order: Language[] = ['en', 'fr', 'ar'];
+    const order: Language[] = ['en', 'fr'];
     const idx = order.indexOf(this.i18n.language());
     this.i18n.setLanguage(order[(idx + 1) % order.length]);
   }
