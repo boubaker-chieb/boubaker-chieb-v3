@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './footer.scss',
 })
 export class Footer {
+  protected readonly i18n = inject(I18nService);
+  protected readonly t = computed(() => this.i18n.translations()?.['footer'] ?? {});
+
   readonly currentYear = new Date().getFullYear();
+
+  protected readonly description = computed(() => this.t()['description'] ?? 'Full Stack Developer specializing in .NET and Angular development.');
+  protected readonly rights = computed(() => this.t()['rights'] ?? 'All rights reserved.');
+  protected readonly footerName = computed(() => this.t()['name'] ?? 'Boubaker Chieb');
 
   readonly socialLinks = [
     { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/boubaker-chieb/' },

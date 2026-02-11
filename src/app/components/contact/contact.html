@@ -1,8 +1,8 @@
 <section class="section" id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-subtitle">Get In Touch</span>
-      <h2 class="section-title">Contact Me</h2>
+      <span class="section-subtitle">{{ sectionSubtitle() }}</span>
+      <h2 class="section-title">{{ sectionTitle() }}</h2>
       <div class="section-line"></div>
     </div>
 
@@ -10,12 +10,10 @@
       <!-- Contact Info -->
       <div class="col-lg-5">
         <div class="contact-info">
-          <h3 class="contact-heading">Let's work together</h3>
-          <p class="contact-text">
-            Feel free to reach out if you have a project in mind, want to collaborate, or just want to say hello.
-          </p>
+          <h3 class="contact-heading">{{ heading() }}</h3>
+          <p class="contact-text">{{ contactDescription() }}</p>
           <div class="info-cards">
-            @for (info of contactInfo; track info.label) {
+            @for (info of contactInfo(); track info.label) {
               <div class="info-card glass-card">
                 <div class="info-icon">
                   <i [class]="info.icon"></i>
@@ -40,11 +38,11 @@
           <div class="row g-3">
             <div class="col-md-6">
               <div class="form-group">
-                <label class="form-label">Your Name</label>
+                <label class="form-label">{{ form().name }}</label>
                 <input
                   type="text"
                   class="form-input"
-                  placeholder="John Doe"
+                  [placeholder]="form().namePlaceholder"
                   [value]="name()"
                   (input)="name.set($any($event.target).value)"
                   required
@@ -53,11 +51,11 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label class="form-label">Your Email</label>
+                <label class="form-label">{{ form().email }}</label>
                 <input
                   type="email"
                   class="form-input"
-                  placeholder="john@example.com"
+                  [placeholder]="form().emailPlaceholder"
                   [value]="email()"
                   (input)="email.set($any($event.target).value)"
                   required
@@ -66,11 +64,11 @@
             </div>
             <div class="col-12">
               <div class="form-group">
-                <label class="form-label">Subject</label>
+                <label class="form-label">{{ form().subject }}</label>
                 <input
                   type="text"
                   class="form-input"
-                  placeholder="Project Inquiry"
+                  [placeholder]="form().subjectPlaceholder"
                   [value]="subject()"
                   (input)="subject.set($any($event.target).value)"
                 />
@@ -78,10 +76,10 @@
             </div>
             <div class="col-12">
               <div class="form-group">
-                <label class="form-label">Message</label>
+                <label class="form-label">{{ form().message }}</label>
                 <textarea
                   class="form-input form-textarea"
-                  placeholder="Your message..."
+                  [placeholder]="form().messagePlaceholder"
                   rows="5"
                   [value]="message()"
                   (input)="message.set($any($event.target).value)"
@@ -92,9 +90,9 @@
             <div class="col-12">
               <button type="submit" class="btn-primary-custom">
                 @if (submitted()) {
-                  <i class="fas fa-check"></i> Message Sent!
+                  <i class="fas fa-check"></i> {{ form().success }}
                 } @else {
-                  <i class="fas fa-paper-plane"></i> Send Message
+                  <i class="fas fa-paper-plane"></i> {{ form().send }}
                 }
               </button>
             </div>

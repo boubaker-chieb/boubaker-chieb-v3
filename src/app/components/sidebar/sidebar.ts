@@ -1,5 +1,6 @@
-import { Component, signal, inject, afterNextRender, DestroyRef } from '@angular/core';
+import { Component, signal, inject, afterNextRender, DestroyRef, computed } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
+import { I18nService, Language } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,19 +10,31 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class Sidebar {
   protected readonly themeService = inject(ThemeService);
+  protected readonly i18n = inject(I18nService);
   protected readonly activeSection = signal('hero');
   protected readonly isMobileMenuOpen = signal(false);
 
   private readonly destroyRef = inject(DestroyRef);
   private observer: IntersectionObserver | null = null;
 
-  readonly navItems = [
-    { id: 'hero', icon: 'fas fa-home', label: 'Home' },
-    { id: 'about', icon: 'fas fa-user', label: 'About' },
-    { id: 'skills', icon: 'fas fa-cogs', label: 'Skills' },
-    { id: 'experience', icon: 'fas fa-briefcase', label: 'Experience' },
-    { id: 'projects', icon: 'fas fa-folder-open', label: 'Projects' },
-    { id: 'contact', icon: 'fas fa-envelope', label: 'Contact' },
+  protected readonly t = computed(() => this.i18n.translations()?.['nav'] ?? {});
+
+  protected readonly navItems = computed(() => {
+    const nav = this.t();
+    return [
+      { id: 'hero', icon: 'fas fa-home', label: nav['home'] ?? 'Home' },
+      { id: 'about', icon: 'fas fa-user', label: nav['about'] ?? 'About' },
+      { id: 'skills', icon: 'fas fa-cogs', label: nav['skills'] ?? 'Skills' },
+      { id: 'experience', icon: 'fas fa-briefcase', label: nav['experience'] ?? 'Experience' },
+      { id: 'projects', icon: 'fas fa-folder-open', label: nav['projects'] ?? 'Projects' },
+      { id: 'contact', icon: 'fas fa-envelope', label: nav['contact'] ?? 'Contact' },
+    ];
+  });
+
+  readonly languages: { code: Language; label: string }[] = [
+    { code: 'en', label: 'EN' },
+    { code: 'fr', label: 'FR' },
+    { code: 'ar', label: 'AR' },
   ];
 
   readonly socialLinks = [
@@ -50,8 +63,14 @@ export class Sidebar {
     this.isMobileMenuOpen.update((v) => !v);
   }
 
+  cycleLang(): void {
+    const order: Language[] = ['en', 'fr', 'ar'];
+    const idx = order.indexOf(this.i18n.language());
+    this.i18n.setLanguage(order[(idx + 1) % order.length]);
+  }
+
   private setupScrollSpy(): void {
-    const sectionIds = this.navItems.map((item) => item.id);
+    const sectionIds = this.navItems().map((item) => item.id);
     const visibleSections = new Map<string, number>();
 
     this.observer = new IntersectionObserver(
@@ -64,7 +83,6 @@ export class Sidebar {
           }
         }
 
-        // Pick the section that appears first in the nav order among visible ones
         for (const id of sectionIds) {
           if (visibleSections.has(id)) {
             this.activeSection.set(id);

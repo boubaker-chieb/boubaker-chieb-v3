@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Boubaker Chieb",
+    "title": "Full Stack Developer",
+    "subtitle": "C#, .NET, Angular, TypeScript | Cloud & REST APIs | C# Certified",
+    "description": "I create modern web applications with cutting-edge technologies. Passionate about clean code, scalable architecture, and delivering exceptional user experiences.",
+    "cta": "Let's Talk",
+    "linkedin": "LinkedIn Profile",
+    "stats": {
+      "experience": { "value": "8+", "label": "Years Experience" },
+      "projects": { "value": "50+", "label": "Projects Delivered" },
+      "technologies": { "value": "15+", "label": "Technologies" }
+    },
+    "codeBlock": {
+      "name": "Boubaker Chieb",
+      "role": "Full Stack Developer",
+      "skills": ["Angular", "C#", ".NET"],
+      "passion": "Building great apps"
+    }
+  },
+  "about": {
+    "subtitle": "Get to Know Me",
+    "title": "About Me",
+    "name": "Boubaker CHIEB",
+    "role": "Full-Stack Developer",
+    "bio": "Passionate Full Stack Developer with 8+ years of experience building modern web applications. Specialized in Angular, C#/.NET, and cloud technologies. I thrive on creating clean, scalable solutions that make a real difference.",
+    "hireMeBtn": "Hire Me",
+    "experienceValue": "8+",
+    "experienceLabel": "Years of Experience",
+    "details": {
+      "current": { "label": "Current", "value": "Amundi - Full-Stack Engineer" },
+      "certification": { "label": "Certification", "value": "Microsoft C# Certified" },
+      "location": { "label": "Location", "value": "Paris, France" },
+      "email": { "label": "Email", "value": "boubaker.ch@outlook.fr" },
+      "languages": { "label": "Languages", "value": "French, English, Arabic" },
+      "freelance": { "label": "Freelance", "value": "Available" }
+    }
+  },
+  "skills": {
+    "subtitle": "What I Know",
+    "title": "Skills & Technologies",
+    "categories": {
+      "frontend": {
+        "name": "Frontend",
+        "items": ["Angular", "React", "TypeScript", "Signals"]
+      },
+      "backend": {
+        "name": "Backend",
+        "items": [".NET Core", "C#", "Node.js", "Entity Framework"]
+      },
+      "database": {
+        "name": "Database",
+        "items": ["SQL Server", "T-SQL", "MongoDB", "Azure SQL"]
+      },
+      "cloud": {
+        "name": "Cloud & DevOps",
+        "items": ["Azure", "Azure DevOps", "Git", "CI/CD Pipelines"]
+      },
+      "tools": {
+        "name": "Tools",
+        "items": ["Visual Studio", "VS Code", "Postman", "Azure Portal"]
+      }
+    }
+  },
+  "experience": {
+    "subtitle": "My Journey",
+    "title": "Work Experience",
+    "entries": [
+      {
+        "company": "Amundi Technology",
+        "role": "Tech Lead .NET / Angular",
+        "period": "Jan 2026 - Present",
+        "location": "Paris, France",
+        "description": "Leading technical architecture and development of fund management applications using .NET Core and Angular with modern patterns.",
+        "technologies": ["Angular", ".NET Core", "Azure", "SQL Server", "CI/CD"]
+      },
+      {
+        "company": "Ayvens (ALD Automotive)",
+        "role": "Full Stack Developer .NET / Angular",
+        "period": "Dec 2023 - Jan 2026",
+        "location": "Paris, France",
+        "description": "Developed and maintained leasing management platforms, implementing new features and optimizing existing systems for automotive leasing operations.",
+        "technologies": ["Angular", "C#", ".NET Core", "SQL Server", "Azure DevOps"]
+      },
+      {
+        "company": "Société Générale",
+        "role": "Full Stack Developer .NET / Angular",
+        "period": "Mar 2021 - Dec 2023",
+        "location": "Paris, France",
+        "description": "Built and maintained banking applications for fund management, implementing complex business rules and real-time data processing.",
+        "technologies": ["Angular", ".NET Core", "SQL Server", "Entity Framework", "Azure"]
+      },
+      {
+        "company": "HLi-Group",
+        "role": "Full Stack Developer .NET / Angular",
+        "period": "Jan 2019 - Feb 2021",
+        "location": "Paris, France",
+        "description": "Developed IoT monitoring platforms and business management solutions, working across the full stack with .NET backend and Angular frontend.",
+        "technologies": ["Angular", "C#", ".NET Core", "MongoDB", "SignalR"]
+      },
+      {
+        "company": "Spark-IT",
+        "role": "Web Developer .NET",
+        "period": "Oct 2017 - Dec 2018",
+        "location": "Tunis, Tunisia",
+        "description": "Started professional career developing web applications with ASP.NET MVC, handling database design and frontend integration.",
+        "technologies": ["ASP.NET MVC", "C#", "SQL Server", "JavaScript", "Bootstrap"]
+      }
+    ]
+  },
+  "projects": {
+    "subtitle": "My Work",
+    "title": "Recent Projects",
+    "filters": {
+      "all": "All",
+      "finance": "Finance",
+      "automotive": "Automotive",
+      "iot": "IoT"
+    },
+    "entries": [
+      {
+        "title": "Leasing Auto Platform",
+        "category": "Automotive",
+        "description": "Full-stack leasing management platform for automotive fleet operations with real-time tracking and automated workflows.",
+        "technologies": ["Angular", ".NET Core", "SQL Server", "Azure"]
+      },
+      {
+        "title": "Welcome Auto System",
+        "category": "Automotive",
+        "description": "Digital onboarding system for automotive clients with document management and approval workflows.",
+        "technologies": ["Angular", "C#", "Entity Framework", "Azure DevOps"]
+      },
+      {
+        "title": "FundAlert Platform",
+        "category": "Finance",
+        "description": "Real-time fund alerting and monitoring platform for asset management with configurable alert rules and dashboards.",
+        "technologies": ["Angular", ".NET Core", "SignalR", "SQL Server"]
+      },
+      {
+        "title": "Funds-Factsheet Generator",
+        "category": "Finance",
+        "description": "Automated generation of fund factsheets with dynamic data visualization and PDF export capabilities.",
+        "technologies": ["Angular", "C#", ".NET Core", "Azure"]
+      },
+      {
+        "title": "IoT-Lifting Monitoring",
+        "category": "IoT",
+        "description": "IoT-based real-time monitoring platform for lifting equipment with sensor data visualization and predictive alerts.",
+        "technologies": ["Angular", ".NET Core", "MongoDB", "SignalR"]
+      },
+      {
+        "title": "Fund Administration",
+        "category": "Finance",
+        "description": "Comprehensive fund administration system handling NAV calculations, investor reporting, and regulatory compliance.",
+        "technologies": ["Angular", ".NET Core", "SQL Server", "Entity Framework"]
+      }
+    ]
+  },
+  "contact": {
+    "subtitle": "Get In Touch",
+    "title": "Contact Me",
+    "heading": "Let's work together",
+    "description": "Feel free to reach out if you have a project in mind, want to collaborate, or just want to say hello.",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "email": "Your Email",
+      "emailPlaceholder": "john@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Project Inquiry",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "send": "Send Message",
+      "success": "Message Sent!"
+    },
+    "info": {
+      "location": { "label": "Location", "value": "Paris, France" },
+      "email": { "label": "Email", "value": "boubaker.ch@outlook.fr" },
+      "linkedin": { "label": "LinkedIn", "value": "Boubaker Chieb" },
+      "github": { "label": "GitHub", "value": "github.com/bchieb" }
+    }
+  },
+  "footer": {
+    "description": "Full Stack Developer specializing in .NET and Angular development.",
+    "rights": "All rights reserved.",
+    "name": "Boubaker Chieb"
+  }
+}

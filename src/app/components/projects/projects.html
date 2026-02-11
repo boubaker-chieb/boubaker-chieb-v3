@@ -1,19 +1,19 @@
 <section class="section" id="projects">
   <div class="container">
     <div class="section-header">
-      <span class="section-subtitle">My Work</span>
-      <h2 class="section-title">Recent Projects</h2>
+      <span class="section-subtitle">{{ sectionSubtitle() }}</span>
+      <h2 class="section-title">{{ sectionTitle() }}</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="filter-buttons">
-      @for (filter of filters; track filter) {
+      @for (filter of filters(); track filter.key) {
         <button
           class="filter-btn"
-          [class.active]="activeFilter() === filter"
-          (click)="setFilter(filter)"
+          [class.active]="activeFilter() === filter.key"
+          (click)="setFilter(filter.key)"
         >
-          {{ filter }}
+          {{ filter.label }}
         </button>
       }
     </div>

@@ -1,8 +1,8 @@
 <section class="section" id="about">
   <div class="container">
     <div class="section-header">
-      <span class="section-subtitle">Get to Know Me</span>
-      <h2 class="section-title">About Me</h2>
+      <span class="section-subtitle">{{ sectionSubtitle() }}</span>
+      <h2 class="section-title">{{ sectionTitle() }}</h2>
       <div class="section-line"></div>
     </div>
 
@@ -15,8 +15,8 @@
             </div>
           </div>
           <div class="about-badge">
-            <span class="badge-number">8+</span>
-            <span class="badge-text">Years of<br />Experience</span>
+            <span class="badge-number">{{ experienceValue() }}</span>
+            <span class="badge-text">{{ experienceLabel() }}</span>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
           <p class="about-bio">{{ bio() }}</p>
 
           <div class="about-details">
-            @for (detail of details; track detail.label) {
+            @for (detail of details(); track detail.label) {
               <div class="detail-item">
                 <div class="detail-icon">
                   <i [class]="detail.icon"></i>
@@ -42,7 +42,7 @@
 
           <div class="about-actions">
             <a href="mailto:boubaker.ch&#64;outlook.fr" class="btn-primary-custom">
-              <i class="fas fa-paper-plane"></i> Hire Me
+              <i class="fas fa-paper-plane"></i> {{ hireMeBtn() }}
             </a>
           </div>
         </div>

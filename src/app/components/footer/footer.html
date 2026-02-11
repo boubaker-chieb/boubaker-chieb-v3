@@ -3,9 +3,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <span class="footer-logo">B<span class="accent">.</span></span>
-        <p class="footer-text">
-          Full Stack Developer specializing in .NET and Angular development.
-        </p>
+        <p class="footer-text">{{ description() }}</p>
       </div>
       <div class="footer-social">
         @for (link of socialLinks; track link.url) {
@@ -16,7 +14,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ currentYear }} Boubaker Chieb. All rights reserved.</p>
+      <p>&copy; {{ currentYear }} {{ footerName() }}. {{ rights() }}</p>
     </div>
   </div>
 </footer>
