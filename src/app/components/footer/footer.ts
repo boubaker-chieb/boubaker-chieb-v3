@@ -19,7 +19,7 @@ export class Footer {
 
   readonly socialLinks = [
     { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/boubaker-chieb/' },
-    { icon: 'fab fa-github', url: 'https://github.com/bchieb' },
+    { icon: 'fab fa-github', url: 'https://github.com/boubaker-chieb' },
     { icon: 'fas fa-envelope', url: 'mailto:boubaker.ch@outlook.fr' },
   ];
 }

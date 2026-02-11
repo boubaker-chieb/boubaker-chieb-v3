@@ -45,7 +45,7 @@ export class Contact {
       { icon: 'fas fa-map-marker-alt', label: info?.['location']?.['label'] ?? 'Location', value: info?.['location']?.['value'] ?? 'Paris, France' },
       { icon: 'fas fa-envelope', label: info?.['email']?.['label'] ?? 'Email', value: info?.['email']?.['value'] ?? 'boubaker.ch@outlook.fr', link: 'mailto:boubaker.ch@outlook.fr' },
       { icon: 'fab fa-linkedin', label: info?.['linkedin']?.['label'] ?? 'LinkedIn', value: info?.['linkedin']?.['value'] ?? 'Boubaker Chieb', link: 'https://www.linkedin.com/in/boubaker-chieb/' },
-      { icon: 'fab fa-github', label: info?.['github']?.['label'] ?? 'GitHub', value: info?.['github']?.['value'] ?? 'github.com/bchieb', link: 'https://github.com/bchieb' },
+      { icon: 'fab fa-github', label: info?.['github']?.['label'] ?? 'GitHub', value: info?.['github']?.['value'] ?? 'github.com/boubaker-chieb', link: 'https://github.com/boubaker-chieb' },
     ];
   });
 
