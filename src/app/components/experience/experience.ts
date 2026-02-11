@@ -26,7 +26,7 @@ export class ExperienceComponent {
   private readonly fallbackExperiences: Experience[] = [
     {
       company: 'Amundi Technology',
-      role: 'Tech Lead .NET / Angular',
+      role: 'Full Stack Engineer .NET / Angular',
       period: 'Jan 2026 - Present',
       location: 'Paris, France',
       description: 'Leading technical architecture and development of fund management applications using .NET Core and Angular with modern patterns.',
