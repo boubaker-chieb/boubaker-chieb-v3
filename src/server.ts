@@ -12,6 +12,16 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+app.use(express.json());
+
+app.get('/api/site-likes', (_req, res) => {
+  res.status(200).json({ count: 3248, success: true });
+});
+
+app.post('/api/site-likes', (_req, res) => {
+  res.status(200).json({ count: 3249, success: true });
+});
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
