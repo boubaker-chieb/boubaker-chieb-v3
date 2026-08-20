@@ -1,6 +1,22 @@
 import { Component, inject, computed } from '@angular/core';
 import { I18nService } from '../../services/i18n.service';
 
+const START_DATE = new Date('2017-01-01T00:00:00Z');
+
+function getExperienceYears(): number {
+  const now = new Date();
+  let years = now.getFullYear() - START_DATE.getFullYear();
+
+  if (
+    now.getMonth() < START_DATE.getMonth() ||
+    (now.getMonth() === START_DATE.getMonth() && now.getDate() < START_DATE.getDate())
+  ) {
+    years -= 1;
+  }
+
+  return Math.max(years, 0);
+}
+
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -22,7 +38,7 @@ export class Hero {
   protected readonly stats = computed(() => {
     const s = this.t()['stats'];
     return [
-      { value: s?.['experience']?.['value'] ?? '8+', label: s?.['experience']?.['label'] ?? 'Years Experience' },
+      { value: `${getExperienceYears()}+`, label: s?.['experience']?.['label'] ?? 'Years Experience' },
       { value: s?.['projects']?.['value'] ?? '50+', label: s?.['projects']?.['label'] ?? 'Projects Delivered' },
       { value: s?.['technologies']?.['value'] ?? '15+', label: s?.['technologies']?.['label'] ?? 'Technologies' },
     ];

@@ -1,6 +1,29 @@
 import { Component, inject, computed } from '@angular/core';
 import { I18nService } from '../../services/i18n.service';
 
+const START_DATE = new Date('2017-01-01T00:00:00Z');
+
+function getExperienceYears(): number {
+  const now = new Date();
+  let years = now.getFullYear() - START_DATE.getFullYear();
+
+  if (
+    now.getMonth() < START_DATE.getMonth() ||
+    (now.getMonth() === START_DATE.getMonth() && now.getDate() < START_DATE.getDate())
+  ) {
+    years -= 1;
+  }
+
+  return Math.max(years, 0);
+}
+
+function formatAboutBio(text: string, years: number): string {
+  return text
+    .replace(/\b8\s*\+\b/gi, `${years}+`)
+    .replace(/\b8\s+ans\b/gi, `${years} ans`)
+    .replace(/\b8\s+years\b/gi, `${years} years`);
+}
+
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -13,11 +36,15 @@ export class About {
 
   protected readonly name = computed(() => this.t()['name'] ?? 'Boubaker CHIEB');
   protected readonly role = computed(() => this.t()['role'] ?? 'Full Stack Developer');
-  protected readonly bio = computed(() => this.t()['bio'] ?? 'Passionate Full Stack Developer with 8+ years of experience building modern web applications. Specialized in Angular, C#/.NET, and cloud technologies. I thrive on creating clean, scalable solutions that make a real difference.');
+  protected readonly bio = computed(() => {
+    const years = getExperienceYears();
+    const base = this.t()['bio'] ?? 'Passionate Full Stack Developer with 8+ years of experience building modern web applications. Specialized in Angular, C#/.NET, and cloud technologies. I thrive on creating clean, scalable solutions that make a real difference.';
+    return formatAboutBio(base, years);
+  });
   protected readonly sectionSubtitle = computed(() => this.t()['subtitle'] ?? 'Get to Know Me');
   protected readonly sectionTitle = computed(() => this.t()['title'] ?? 'About Me');
   protected readonly hireMeBtn = computed(() => this.t()['hireMeBtn'] ?? 'Hire Me');
-  protected readonly experienceValue = computed(() => this.t()['experienceValue'] ?? '8+');
+  protected readonly experienceValue = computed(() => `${getExperienceYears()}+`);
   protected readonly experienceLabel = computed(() => this.t()['experienceLabel'] ?? 'Years of Experience');
 
   protected readonly details = computed(() => {

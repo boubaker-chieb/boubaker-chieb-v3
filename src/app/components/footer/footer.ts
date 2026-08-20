@@ -11,6 +11,7 @@ export class Footer {
   protected readonly i18n = inject(I18nService);
   protected readonly t = computed(() => this.i18n.translations()?.['footer'] ?? {});
 
+  readonly startYear = 2023;
   readonly currentYear = new Date().getFullYear();
 
   protected readonly description = computed(() => this.t()['description'] ?? 'Full Stack Developer specializing in .NET and Angular development.');

@@ -7,7 +7,7 @@ $gradient-end: #ff3366;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 40px 0;
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
 
   .hero-bg-particles {
     position: absolute;
@@ -30,7 +30,7 @@ $gradient-end: #ff3366;
 
 .hero-content {
   .hero-greeting {
-    font-size: 16px;
+    font-size: clamp(0.75rem, 1vw, 1rem);
     color: $primary;
     font-weight: 600;
     letter-spacing: 2px;
@@ -41,16 +41,17 @@ $gradient-end: #ff3366;
   }
 
   .hero-name {
-    font-size: 52px;
+    font-size: clamp(2.6rem, 5.2vw, 5rem);
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 10px;
-    line-height: 1.1;
+    line-height: 1.05;
+    letter-spacing: -0.05em;
     animation: fadeInUp 0.6s ease 0.1s both;
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: clamp(1.4rem, 2.6vw, 2.4rem);
     font-weight: 600;
     background: linear-gradient(135deg, $primary, $gradient-end);
     -webkit-background-clip: text;
@@ -61,7 +62,7 @@ $gradient-end: #ff3366;
   }
 
   .hero-subtitle {
-    font-size: 14px;
+    font-size: clamp(0.78rem, 1.05vw, 0.95rem);
     color: var(--text-muted);
     margin-bottom: 20px;
     animation: fadeInUp 0.6s ease 0.3s both;
@@ -73,7 +74,7 @@ $gradient-end: #ff3366;
   }
 
   .hero-description {
-    font-size: 16px;
+    font-size: clamp(0.96rem, 1.35vw, 1.1rem);
     color: var(--text-secondary);
     max-width: 550px;
     margin-bottom: 30px;
@@ -87,11 +88,16 @@ $gradient-end: #ff3366;
     margin-bottom: 40px;
     flex-wrap: wrap;
     animation: fadeInUp 0.6s ease 0.5s both;
+
+    a {
+      min-width: 168px;
+    }
   }
 
   .hero-stats {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 2.5rem);
     animation: fadeInUp 0.6s ease 0.6s both;
 
     .stat-item {
@@ -99,7 +105,7 @@ $gradient-end: #ff3366;
 
       .stat-value {
         display: block;
-        font-size: 28px;
+        font-size: clamp(1.4rem, 2vw, 2rem);
         font-weight: 700;
         color: var(--text-primary);
       }
@@ -223,11 +229,14 @@ $gradient-end: #ff3366;
   .hero-content {
     text-align: center;
 
-    .hero-name { font-size: 36px; }
-    .hero-title { font-size: 22px; }
+    .hero-name { font-size: clamp(2.2rem, 7vw, 3.5rem); }
+    .hero-title { font-size: clamp(1.4rem, 3vw, 2rem); }
     .hero-description { margin: 0 auto 30px; }
-    .hero-actions { justify-content: center; }
-    .hero-stats { justify-content: center; gap: 25px; }
+    .hero-actions {
+      justify-content: center;
+      a { min-width: 0; }
+    }
+    .hero-stats { justify-content: center; }
   }
 
   .hero-visual {
@@ -275,6 +284,10 @@ $gradient-end: #ff3366;
       flex-direction: column;
       gap: 10px;
       margin-bottom: 25px;
+
+      a {
+        width: 100%;
+      }
     }
 
     .hero-stats {

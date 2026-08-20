@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "A propos",
+    "about": "À propos",
     "skills": "Compétences",
     "experience": "Expérience",
     "projects": "Projets",
@@ -11,31 +11,31 @@
   "hero": {
     "greeting": "Bonjour, je suis",
     "name": "Boubaker Chieb",
-    "title": "Développeur Full Stack",
-    "subtitle": "C#, .NET, Angular, TypeScript | Cloud & APIs REST | Certifié C#",
-    "description": "Je crée des applications web modernes avec des technologies de pointe. Passionné par le code propre, l'architecture évolutive et la création d'expériences utilisateur exceptionnelles.",
+    "title": "Ingénieur full-stack qui conçoit des expériences numériques performantes",
+    "subtitle": "Angular • .NET • TypeScript • Cloud • Product thinking",
+    "description": "Je conçois et développe des produits web évolutifs, agréables à utiliser et efficaces pour les utilisateurs comme pour les entreprises. Du design à l'architecture, je transforme des idées complexes en expériences claires et impactantes.",
     "cta": "Discutons",
     "linkedin": "Profil LinkedIn",
     "stats": {
-      "experience": { "value": "8+", "label": "Années d'expérience" },
-      "projects": { "value": "50+", "label": "Projets livrés" },
-      "technologies": { "value": "15+", "label": "Technologies" }
+      "experience": { "value": "8+", "label": "Années d'impact" },
+      "projects": { "value": "50+", "label": "Produits livrés" },
+      "technologies": { "value": "15+", "label": "Outils tech" }
     },
     "codeBlock": {
       "name": "Boubaker Chieb",
-      "role": "Développeur Full Stack",
-      "skills": ["Angular", "C#", ".NET"],
-      "passion": "Créer de superbes applications"
+      "role": "Ingénieur Full-Stack",
+      "skills": ["Angular", ".NET", "UX produit"],
+      "passion": "Créer des expériences utiles"
     }
   },
   "about": {
-    "subtitle": "Apprenez à me connaître",
-    "title": "A propos de moi",
+    "subtitle": "À propos",
+    "title": "Un développeur orienté produit et orienté qualité",
     "name": "Boubaker CHIEB",
-    "role": "Développeur Full-Stack",
-    "bio": "Développeur Full Stack passionné avec plus de 8 ans d'expérience dans la création d'applications web modernes. Spécialisé en Angular, C#/.NET et technologies cloud. Je m'épanouis en créant des solutions propres et évolutives qui font une vraie différence.",
-    "hireMeBtn": "Recrutez-moi",
-    "experienceValue": "8+",
+    "role": "Ingénieur Full-Stack",
+    "bio": "Je construis des produits numériques qui allient rigueur technique, sens du design et efficacité fonctionnelle. Avec plus de 9 ans d'expérience dans la finance, l'automobile et les plateformes cloud, je crée des interfaces fiables, belles et utiles pour les utilisateurs et les métiers.",
+    "hireMeBtn": "Travaillons ensemble",
+    "experienceValue": "9+",
     "experienceLabel": "Années d'expérience",
     "details": {
       "current": { "label": "Poste actuel", "value": "Amundi - Ingénieur Full-Stack" },
@@ -43,69 +43,69 @@
       "location": { "label": "Localisation", "value": "Paris, France" },
       "email": { "label": "Email", "value": "boubaker.ch@outlook.fr" },
       "languages": { "label": "Langues", "value": "Français, Anglais, Arabe" },
-      "freelance": { "label": "Freelance", "value": "Disponible" }
+      "freelance": { "label": "Disponibilité", "value": "Ouvert aux projets" }
     }
   },
   "skills": {
     "subtitle": "Ce que je maîtrise",
-    "title": "Compétences & Technologies",
+    "title": "Capacités & stack",
     "categories": {
       "frontend": {
         "name": "Frontend",
-        "items": ["Angular", "React", "TypeScript", "Signals"]
+        "items": ["Angular", "React", "TypeScript", "Architecture UI"]
       },
       "backend": {
         "name": "Backend",
-        "items": [".NET Core", "C#", "Node.js", "Entity Framework"]
+        "items": [".NET Core", "C#", "Node.js", "Design d'API"]
       },
       "database": {
-        "name": "Base de données",
+        "name": "Données",
         "items": ["SQL Server", "T-SQL", "MongoDB", "Azure SQL"]
       },
       "cloud": {
         "name": "Cloud & DevOps",
-        "items": ["Azure", "Azure DevOps", "Git", "Pipelines CI/CD"]
+        "items": ["Azure", "Azure DevOps", "Git", "CI/CD"]
       },
       "tools": {
-        "name": "Outils",
-        "items": ["Visual Studio", "VS Code", "Postman", "Azure Portal"]
+        "name": "Méthode",
+        "items": ["Figma", "VS Code", "Postman", "Livraison agile"]
       }
     }
   },
   "experience": {
-    "subtitle": "Mon parcours",
-    "title": "Expérience professionnelle",
+    "subtitle": "Parcours professionnel",
+    "title": "Expérience",
     "entries": [
       {
         "company": "Amundi Technology",
-        "role": "Ingénieur Full Stack .NET / Angular",
-        "period": "Jan. 2026 - Présent",
+        "role": "Ingénieur Full-Stack .NET / Angular",
+        "period": "Janv. 2026 - Aujourd'hui",
         "location": "Paris, France",
-        "description": "Direction de l'architecture technique et du développement d'applications de gestion de fonds utilisant .NET Core et Angular avec des patterns modernes.",
+        "description": "Je pilote des architectures critiques et la livraison de fonctionnalités pour des applications financières demandant fiabilité, performance et maintenabilité.",
         "technologies": ["Angular", ".NET Core", "Azure", "SQL Server", "CI/CD"]
       },
       {
         "company": "Ayvens (ALD Automotive)",
-        "role": "Développeur Full Stack .NET / Angular",
-        "period": "Déc. 2023 - Jan. 2026",
+        "role": "Développeur Full-Stack .NET / Angular",
+        "period": "Déc. 2023 - Janv. 2026",
         "location": "Paris, France",
-        "description": "Développement et maintenance de plateformes de gestion de leasing, implémentation de nouvelles fonctionnalités et optimisation des systèmes existants pour les opérations de leasing automobile.",
+        "description": "J'ai développé des plateformes critiques pour le leasing automobile, amélioré leur fiabilité et conçu des parcours plus fluides pour les équipes métiers et les clients.",
         "technologies": ["Angular", "C#", ".NET Core", "SQL Server", "Azure DevOps"]
       },
       {
         "company": "Société Générale",
-        "role": "Développeur Full Stack .NET / Angular",
+        "role": "Développeur Full-Stack .NET / Angular",
         "period": "Mars 2021 - Déc. 2023",
         "location": "Paris, France",
-        "description": "Conception et maintenance d'applications bancaires pour la gestion de fonds, implémentation de règles métier complexes et traitement de données en temps réel.",
+        "description": "J'ai conçu des outils financiers et des systèmes opérationnels gérant des règles métier complexes, la qualité des données et les processus urgents.",
         "technologies": ["Angular", ".NET Core", "SQL Server", "Entity Framework", "Azure"]
       },
       {
         "company": "HLi-Group",
-        "role": "Développeur Full Stack .NET / Angular",
-        "period": "Jan. 2019 - Fév. 2021",
+        "role": "Développeur Full-Stack .NET / Angular",
+        "period": "Janv. 2019 - Fév. 2021",
         "location": "Paris, France",
-        "description": "Développement de plateformes de monitoring IoT et de solutions de gestion d'entreprise, travaillant sur l'ensemble du stack avec un backend .NET et un frontend Angular.",
+        "description": "J'ai livré des tableaux de bord IoT et des solutions de gestion interne qui connectaient des données opérationnelles à des décisions concrètes.",
         "technologies": ["Angular", "C#", ".NET Core", "MongoDB", "SignalR"]
       },
       {
@@ -113,13 +113,13 @@
         "role": "Développeur Web .NET",
         "period": "Oct. 2017 - Déc. 2018",
         "location": "Tunis, Tunisie",
-        "description": "Début de carrière professionnelle dans le développement d'applications web avec ASP.NET MVC, gestion de la conception de bases de données et intégration frontend.",
+        "description": "J'ai commencé mon parcours en développant des applications web avec ASP.NET MVC et en améliorant les expériences utilisateur de bout en bout.",
         "technologies": ["ASP.NET MVC", "C#", "SQL Server", "JavaScript", "Bootstrap"]
       }
     ]
   },
   "projects": {
-    "subtitle": "Mes réalisations",
+    "subtitle": "Sélection de projets",
     "title": "Projets récents",
     "filters": {
       "all": "Tous",
@@ -131,46 +131,46 @@
       {
         "title": "Plateforme Leasing Auto",
         "category": "Automobile",
-        "description": "Plateforme full-stack de gestion de leasing pour les opérations de flotte automobile avec suivi en temps réel et workflows automatisés.",
+        "description": "Un workflow moderne pour les opérations de flotte automobile, en reliant les données temps réel à des parcours simplifiés et automatisés.",
         "technologies": ["Angular", ".NET Core", "SQL Server", "Azure"]
       },
       {
         "title": "Système Welcome Auto",
         "category": "Automobile",
-        "description": "Système d'onboarding digital pour les clients automobiles avec gestion documentaire et workflows de validation.",
+        "description": "Une expérience d'onboarding numérique pour clients automobiles, fluidifiant les validations, la gestion documentaire et la cohérence opérationnelle.",
         "technologies": ["Angular", "C#", "Entity Framework", "Azure DevOps"]
       },
       {
         "title": "Plateforme FundAlert",
         "category": "Finance",
-        "description": "Plateforme d'alertes et de surveillance de fonds en temps réel pour la gestion d'actifs avec des règles d'alerte configurables et des tableaux de bord.",
+        "description": "Un produit d'alerte et de surveillance permettant de réagir plus vite aux événements de fonds grâce à des tableaux de bord temps réel.",
         "technologies": ["Angular", ".NET Core", "SignalR", "SQL Server"]
       },
       {
         "title": "Générateur Funds-Factsheet",
         "category": "Finance",
-        "description": "Génération automatisée de fiches de fonds avec visualisation dynamique des données et export PDF.",
+        "description": "Un workflow de génération de documents transformant des données brutes en rapports d'investissement lisibles, conformes et exportables.",
         "technologies": ["Angular", "C#", ".NET Core", "Azure"]
       },
       {
         "title": "Monitoring IoT-Lifting",
         "category": "IoT",
-        "description": "Plateforme de monitoring en temps réel basée sur l'IoT pour les équipements de levage avec visualisation des données capteurs et alertes prédictives.",
+        "description": "Une plateforme de supervision de données industrielles qui transforme des signaux techniques en alertes et décisions plus rapides.",
         "technologies": ["Angular", ".NET Core", "MongoDB", "SignalR"]
       },
       {
         "title": "Administration de Fonds",
         "category": "Finance",
-        "description": "Système complet d'administration de fonds gérant les calculs de VNI, le reporting investisseurs et la conformité réglementaire.",
+        "description": "Un système d'administration complet qui équilibre performance, transparence des données et complexité réglementaire dans une architecture maintenable.",
         "technologies": ["Angular", ".NET Core", "SQL Server", "Entity Framework"]
       }
     ]
   },
   "contact": {
     "subtitle": "Prenons contact",
-    "title": "Contactez-moi",
-    "heading": "Travaillons ensemble",
-    "description": "N'hésitez pas à me contacter si vous avez un projet en tête, souhaitez collaborer, ou simplement dire bonjour.",
+    "title": "Démarrons un projet",
+    "heading": "Construisons quelque chose de significatif ensemble",
+    "description": "Que vous ayez besoin d'une stratégie produit, d'un frontend soigné ou d'un partenaire full-stack robuste, je serais ravi d'entendre votre besoin.",
     "form": {
       "name": "Votre nom",
       "namePlaceholder": "Jean Dupont",
@@ -179,7 +179,7 @@
       "subject": "Sujet",
       "subjectPlaceholder": "Demande de projet",
       "message": "Message",
-      "messagePlaceholder": "Votre message...",
+      "messagePlaceholder": "Décrivez votre idée...",
       "send": "Envoyer le message",
       "success": "Message envoyé !"
     },
@@ -191,7 +191,7 @@
     }
   },
   "footer": {
-    "description": "Développeur Full Stack spécialisé en développement .NET et Angular.",
+    "description": "Ingénieur full-stack qui crée des produits numériques élégants et robustes.",
     "rights": "Tous droits réservés.",
     "name": "Boubaker Chieb"
   }
